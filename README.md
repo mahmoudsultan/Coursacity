@@ -30,14 +30,14 @@ I've included the .env in git because currently there's no secrets in this file,
 ### Courses Thumbnail
 I've used RoR ActiveStorage variants API to create a 320x240 course thumbnail to avoid loading the original file in courses index as this will lead to large network payload.
 
-I'm also currently handling this by lazy loading, and vuetify helps as well with lazy loading and image placeholder, but for production projects I'd work on making multiple variants for different resolutions and using a CDN.
+I'm also currently handling this by lazy loading, and vuetify helps as well with lazy loading and image placeholder, but for production projects It's better to use existing solutions like Cloudinary or any other solution that may provide more CDN and caching out of the box.
 
 
 ### Notifications and Error Handling
 For simplicity I've used a one snackbar implementation of error notification, this can be changed by making snackbar in the store of type array instead and handling timing out and margins.
 
 ### Slugs
-Currently courses slugs are not used, I'd assume that it was meant to be used for indexing courses, this can be easily established either by a gem, or simply querying on the slug field. **and an index on slug will be needed**.
+Currently courses slugs are not used, I'd assume that it was meant to be used for course view url, this can be easily established either by a gem, or simply querying on the slug field. **and an index on slug will be needed**.
 
 ### Courses Description
 For simplicity, I'm currently rendering descriptions as simple text and not handling either markdown nor html, many packages exist and vue has a `<v-html>` tag but this will require sanitizing to prevent XSS.
